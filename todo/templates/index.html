@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shukri's To Do App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+    <h1>Taskarama: To Do List</h1>
+    <ul> <!--unordered list-->
+        <!--Jinja for loop iterating over each item in to todos list (list of dictionary items)-->
+        {% for todo in todos %}
+            <li>
+                <!--checkbox indicating whether or not task is completed-->
+                <input type="checkbox" name="done" {% if todo['done'] %} checked {%endif%} 
+                    onclick="toggleDone(this)">
+                    <span class="{% if todo['done'] %}done{% endif %}">{{ todo['task'] }}</span>                    <!--for each todo item i todos create a list and insert the value of todo[todo]-->
+                <!-- <a href="{{url_for('check', index=loop.index0) }}">Check</a> -->
+                <a href="{{url_for('edit', index=loop.index0) }}">Edit</a>
+                <a href="{{url_for('delete', index=loop.index0) }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+        <form action="{{url_for('add') }}" method="post">
+            <input type="text" name="todo">
+            <button type="submit">Add Todo</button>
+        </form>
+    </div>
+        <script>
+            // JavaScript function to toggle the 'done' class on the span
+            function toggleDone(checkbox) {
+                const span = checkbox.nextElementSibling;
+                if (checkbox.checked) {
+                    span.classList.add('done');
+                } else {
+                    span.classList.remove('done');
+                }
+            }
+        </script>
+</body>
+</html>

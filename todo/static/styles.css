@@ -1,0 +1,118 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Centered Container */
+.container {
+    max-width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-right: 5px;
+}
+
+button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Task Text */
+li span {
+    flex: 1;
+    margin-left: 10px;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* Link Buttons */
+a {
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-left: 10px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scaling */
+}
+
+/* Edit Button Styling */
+a.edit-link {
+    color: #008CBA; /* Blue for Edit */
+}
+
+a.edit-link:hover {
+    color: #005f75; /* Darker Blue for hover effect */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Delete Button Styling */
+a.delete-link {
+    color: #f44336; /* Red for Delete */
+}
+
+a.delete-link:hover {
+    color: #da190b; /* Darker Red for hover effect */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Done Task Styling */
+.done {
+    text-decoration: line-through;
+    color: #888;
+}
